@@ -33,15 +33,6 @@ run: build ## compile and run the binary
 test: ## run tests
 	@go test ./...
 
-vet: ## run go vet
-	@go vet ./...
-
-fmt: ## run go fmt
-	@go fmt ./...
-
-tidy: ## run go mod tidy
-	@go mod tidy
-
 clean: ## remove the binary files
 	@rm -rf $(BIN_DIR)
 
