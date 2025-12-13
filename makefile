@@ -28,27 +28,21 @@ $(BIN): $(SOURCE)
 build: $(BIN) ## build the binary
 
 run: build ## compile and run the binary
-	@echo "Running $(APP_NAME)..."
 	@$(BIN)
 
 test: ## run tests
-	@echo "Running tests..."
 	@go test ./...
 
 vet: ## run go vet
-	@echo "Running go vet..."
 	@go vet ./...
 
 fmt: ## run go fmt
-	@echo "Running go fmt..."
 	@go fmt ./...
 
 tidy: ## run go mod tidy
-	@echo "Running go mod tidy..."
 	@go mod tidy
 
 clean: ## remove the binary files
-	@echo "Cleaning up..."
 	@rm -rf $(BIN_DIR)
 
 help: ## show this help message
