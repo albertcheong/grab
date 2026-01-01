@@ -19,7 +19,7 @@ make build
 
 The binary will be available at
 ```sh
-bin/grab
+dist/
 ```
 
 ---
