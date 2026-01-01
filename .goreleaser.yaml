@@ -1,0 +1,36 @@
+version: 2
+
+project_name: grab
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - main: ./cmd/grab
+    binary: grab
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s -w
+      - -X main.Version={{ .Version }}
+      - -X main.Date={{ .Date }}
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - format: tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+checksum:
+  name_template: checksums.txt
+
+release:
+  github:
+    owner: aelberthcheong
+    name: grab
