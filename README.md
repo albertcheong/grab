@@ -5,6 +5,11 @@
 
 ## Installation
 
+### Go install
+```sh
+go install "github.com/aelberthcheong/grab@latest"
+```
+
 ### Build from source
 ```sh
 git clone "https://github.com/albertcheong/grab.git"
