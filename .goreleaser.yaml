@@ -7,7 +7,7 @@ before:
     - go mod tidy
 
 builds:
-  - main: ./cmd/grab
+  - main: ./grab.go
     binary: grab
     env:
       - CGO_ENABLED=0
